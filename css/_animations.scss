@@ -1,0 +1,54 @@
+.animation{
+  max-width: 1150px;
+  width: 80%;
+  margin: auto;
+  position: relative;
+  overflow: visible;
+
+  .image-container{
+    z-index: 100;
+    position: relative;
+    //padding-bottom: 53%; // Ratio 2:3
+    overflow: visible;
+
+    &.tribunal{
+      padding-bottom: 57%;
+    }
+
+    img{
+      float: left;
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+
+      // Pour le debug
+      // border: 1px solid green;
+
+      &.pinned{
+        z-index: 200;
+        padding-bottom: 200px; 
+      }
+      &.top{
+        // image = largeur de l'ecran
+        // hauteur = cette largeur * 0.6666
+        // translation voulue = -demi-hauteur => -100 vw * 0.333 = -0.33vw
+        transform: translateY(-30vw);
+      }
+     
+      &.center{
+
+      }
+     
+      //&.left{
+      //  transform: translateX(-100%);
+      //}
+      //&.right{
+      //  transform: translateX(100%);
+      //}
+    }
+  }
+}

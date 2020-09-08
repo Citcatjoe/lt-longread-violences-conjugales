@@ -1,0 +1,409 @@
+{% if debug %}
+{% use 'local_blocks.html.twig' %}
+{% else %}
+{% use '_blocks.html.twig' %}
+{% endif %}
+{% use '_contrib.html.twig' %}
+
+<!DOCTYPE HTML>
+
+<html>
+<head>
+
+{{ block('head_brand') }}
+<link rel="stylesheet" type="text/css" href="css/main.css?100" />
+<link rel="stylesheet" type="text/css" href="css/loader.css" />
+<link rel="stylesheet" type="text/css" href="css/owl.carousel.css" />
+<link rel="stylesheet" type="text/css" href="css/owl.theme.css" />
+<link href='https://fonts.googleapis.com/css?family=Merriweather:400,900,400italic' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/css?family=Oswald:400,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+<link href="https://labs.letemps.ch/interactive/d3js/c3.min.css" rel="stylesheet">
+<script src="https://www.youtube.com/iframe_api"></script>
+<script>var players = [];</script>
+
+</head>
+
+<body style="padding-top: {{ navBarOffset }};">
+{{ block('bar_brand') }}
+
+<div class="overlay">
+	<img class="logo-lt-blanc" src="img/logo-lt-blanc.svg" alt="">
+	<div class="spinner">
+		<div class="double-bounce1"></div>
+		<div class="double-bounce2"></div>
+	</div>
+</div>
+
+<header>
+	<div class="header__bg"></div>
+	<div class="header__bg fab" id="canvasloader-container"></div>
+	<div class="header__gradient"></div>
+
+	<div class="header__content">
+		<div class="header__content__container">
+			<div class="header__content__container__box">
+				<h1>Violence conjugale: histoire d’une lutte sans fin</h1>
+				<!-- <img class="separateur" src="img/separateur.svg" alt=""> -->
+				<h2 class="author">Par <span>Michel Guillaume</span>, <span>Sylvia Revello</span> et <span>Céline Zünd</span></h2>
+				<h2 class="social">
+					<a target="blank" href="https://www.facebook.com/sharer.php?u={{ app.url }}&display=popup&ref=plugin&src=share_button"><i class="fa fa-facebook"></i></a>
+					<a target="blank" href="https://twitter.com/intent/tweet?text={{ description ~ ' ' ~ app.url ~ ' '|url_encode }}&via=letemps"><i class="fa fa-twitter fa-middle"></i></a>
+					<a target="blank" href="https://www.linkedin.com/shareArticle?url={{ app.url }}&mini=true&title={{ title|url_encode }}&summary={{ description|url_encode }}&source={{ 'Le Temps'|url_encode }}"><i class="fa fa-linkedin"></i></a>
+				</h2>
+			</div>
+		</div>
+	</div>
+
+	<div class="scroll-indicator">
+		<div class="scroll-indicator-inner"></div>
+	</div>
+
+</header>
+
+<section class="text padding-bottom">
+	<div class="container">
+
+		<h3 style="" class="chapeau">
+			Malgré trente ans de combat pour une reconnaissance publique, les violences au sein du couple demeurent un fléau meurtrier en Suisse. Entre honte, culpabilité et difficulté à obtenir justice: les témoignages montrent que de nombreux tabous subsistent tant pour les femmes que pour les hommes
+			<hr>
+		</h3>
+
+		<!-- <div class="spacer-small"></div>
+		<div class="spacer-small"></div> -->
+
+		<h4>
+			Textes: Michel Guillaume, Sylvia Revello et Céline Zünd<br>
+			<span>&nbsp;&nbsp;&bull;&nbsp;&nbsp;</span>Iconographie: Mariella Solazzo
+			<span>&nbsp;&nbsp;&bull;&nbsp;&nbsp;</span>Illustrations: Kalonji pour <i>Le Temps</i>
+			<span>&nbsp;&nbsp;&bull;&nbsp;&nbsp;</span>Réalisation Web: Paul Ronga
+			<span>&nbsp;&nbsp;&bull;&nbsp;&nbsp;</span>Webdesign: César Greppin
+		</h4>
+
+		<!-- <div class="spacer-small"></div>
+		<div class="spacer-small"></div> -->
+
+
+		<p>«En sortant de la boîte, il m’a couru après et m’a vue entrer dans ce parking. J’étais prise au piège. Il a sauté et m’a frappée en pleine poitrine avec ses deux jambes. Je suis tombée à terre, je ne pouvais plus respirer. Je n’arrivais pas à crier. Il a continué à frapper, avec ses pieds et ses poings. J’ai cru qu’il ne s’arrêterait jamais, que j’allais mourir sur place.»</p>
+		<p>Cette scène d’agonie, Anita* a mis des années avant de pouvoir la raconter. Sur le moment, l’Argovienne d’à peine 20 ans, sidérée par la violence inouïe, tente de comprendre comment la soirée, entamée en club, a dégénéré, quel regard ou quel mot a pu déclencher ce déchaînement de brutalité chez Lorik*, son compagnon, coutumier des crises de jalousie. Ce soir-là, pourtant, Anita n’appellera pas la police, elle rentrera avec celui qui, après les coups, se confond en excuses et en baisers. Elle s’allongera à ses côtés sans pouvoir fermer l’œil. Il lui faudra six ans pour rompre la chape de contrôle que Lorik a bâtie autour d’elle.</p>
+		<p>L’histoire d’Anita montre à quel point des actes, qui feraient scandale s’ils se déroulaient entre deux personnes sans lien, peuvent être passés sous silence dès lors qu’ils surviennent dans l’intimité d’un couple. Parfois jusqu’à l’irréparable. En moyenne, 13 femmes et 1 homme sont tués par leur partenaire ou ex-partenaire chaque année en Suisse, selon l’Office fédéral de la statistique (OFS). C’est l’une des inégalités les plus marquantes de notre époque: lorsque la violence éclate au sein du couple, les victimes sont en large majorité des femmes (78%). Et alors que dans tous les domaines, la situation des femmes tend à s’améliorer, les statistiques de la violence conjugale, elles, empirent: +6% en 2019 par rapport à l’année précédente, +26% depuis 2014. Les données de 2019 augmentent encore si l’on considère uniquement les lésions corporelles graves (+25%), les injures (+14%) ou encore le viol (+6%). Même s’ils ne reflètent que les cas connus des autorités, ces chiffres laissent penser que les victimes déclarent davantage les agressions. Peut-on y voir le reflet d’une prise de conscience?</p>
+
+		<!-- <h3>(Graphique provisoire, et optionnel…)</h3> -->
+		<iframe class="graph" title="Victimes de violence conjugale au sein de couples et ex-couples" aria-label="Interactive line chart" id="datawrapper-chart-VBlA8" src="https://datawrapper.dwcdn.net/VBlA8/2/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="400"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"])for(var e in a.data["datawrapper-height"]){var t=document.getElementById("datawrapper-chart-"+e)||document.querySelector("iframe[src*='"+e+"']");t&&(t.style.height=a.data["datawrapper-height"][e]+"px")}}))}();
+		</script>
+
+		<h3>Sortir les violences de la sphère privée</h3>
+		<p>Si Anita a attendu six ans pour parler, nombre de victimes sont à jamais restées dans l’ombre. C’est que la violence domestique s’est longtemps cantonnée au cadre privé. Lorsqu’un drame survenait, l’affaire, était souvent qualifiée de crime passionnel dans la rubrique faits divers sans que l’on en interroge les causes. Le politique, jugeait-on alors, n’avait pas à s’immiscer dans l’intimité du foyer. Dès les années 1970, les mouvements féministes s’engagent pour faire reconnaître ce fléau comme un problème de société nécessitant l’intervention des pouvoirs publics. Aujourd’hui, le sujet est devenu un enjeu politique et social, un objet de lutte pour l’égalité des sexes.</p>
+		<p>De nombreux tabous subsistent néanmoins. A travers l’histoire d’Anita*, de Marie*, de Fatou* et de Daniel*, mais aussi à travers les témoignages de professionnels qui aident les victimes au quotidien et de pionnières dans la lutte pour la reconnaissance des violences conjugales,<em> Le Temps</em> a voulu montrer l’ampleur du chemin parcouru, décortiquer l’engrenage de la violence, le poids des préjugés, la pression familiale, la dépendance économique ou encore la honte qui empêchent parfois les victimes de dénoncer leur partenaire, leur mari, leur femme, le père ou la mère de leur enfant. Autant de facteurs qui expliquent que la violence s’enracine souvent sur des années.</p>
+		<p>Car les abus au sein du couple commencent rarement du jour au lendemain. Ils s’installent progressivement. Il y a d’abord des attaques verbales, des menaces, des mots qui rabaissent, très vite suivis d’excuses, puis de grandes déclarations d’amour. «On observe souvent, de la part de l’agresseur, une volonté de contrôler l’autre, son emploi du temps, ses contacts ou ses échanges téléphoniques. Et un jour, c’est l’explosion: les coups partent», observe Pia Allemann, accompagnatrice depuis treize ans au centre de conseils aux femmes victimes de violence domestique LAVI de Zurich. Puis vient le moment, quasiment systématiquement, où la personne violente accuse sa victime de l’avoir provoquée. «On assiste à des comportements qui ressemblent à de l’addiction, souligne la spécialiste. Accès de violence et moments de réconciliation s’alternent. Ces accalmies nourrissent l’espoir que les choses vont s’améliorer, que ce n’est qu’une crise passagère.» Le cycle se répète, s’intensifie avec le temps et atteint son paroxysme lorsque survient une séparation, moment le plus dangereux pour la victime. Un schéma qui se vérifie dans l’histoire d’Anita.</p>
+		<h3>Anita: «Il s’excusait, je le croyais»</h3>
+
+
+		<!-- <blockquote class="right">
+			<span>J’ai trouvé le courage de m’opposer à lui, car il voulait s’en prendre à mon enfant. Cette fois, il s’agissait de quelqu’un d’autre que moi.</span>
+			<div class="caption"><b>Anita*</b></div>
+		</blockquote> -->
+
+		<p>Au lendemain de cette nuit de terreur dans le parking, la jeune femme, aujourd’hui âgée de 26 ans, découvre qu’elle est enceinte. «Ma plus grande erreur a été de faire comme si rien ne s’était passé, confie-t-elle. La nouvelle de la grossesse a complètement éclipsé ce qu’il m’avait fait. J’étais bercée par ma représentation de la famille idéale. Alors, j’ai tout passé sous silence.» Mais, à mesure que le ventre d’Anita s’arrondit, Lorik se montre plus brutal et instable. Trois mois après la nouvelle, il lui demande d’avorter. Lorsqu’elle refuse, il menace de la frapper «jusqu’à ce que l’enfant sorte de son corps». Pour la première fois, cette nuit-là, Anita parvient à se défendre en criant à l’aide, jusqu’à ce que sa belle-famille intervienne. «J’ai trouvé le courage de m’opposer à lui, car il voulait s’en prendre à mon enfant. Cette fois, il s’agissait de quelqu’un d’autre que moi.» Les mois suivant, la relation se délite. Lorik abandonne son apprentissage, sort beaucoup, boit et prend des drogues. La jeune femme s’éloigne, part chez sa mère, mais finit toujours par revenir. «Il s’excusait par de longs messages poétiques. Il était doué pour cela. Je le croyais. Je pensais qu’on pourrait ressembler un jour à une famille.»</p>
+		<p>Au cours de cette trajectoire de violence, la police se rend à plusieurs reprises au domicile du jeune homme, alertée par le voisinage. A chaque fois, le même scénario se répète: les agents interrogent chaque personne séparément, proposent à Anita de déposer plainte. Elle s’y refuse. La police repart. «J’étais face à un dilemme: si je portais plainte contre lui, j’envoyais le père de mon enfant en prison. Que penserait mon fils de moi?» souligne Anita.</p>
+		<p>En 2012, la jeune femme parvient enfin à se séparer de Lorik, qui continue néanmoins à la harceler, entre menaces de mort et chantage au suicide. Un matin, il se rend à son travail et laisse entendre qu’il l’attendra à la sortie avec un pistolet. C’est le geste de trop. La jeune femme dépose plainte pour menace de mort. Dans le rapport qu’elle fera à la police, elle évoque les violences subies, mais tombe de haut. Les coups, les humiliations et les insultes endurés durant des années ne peuvent faire l’objet de poursuites car elle ne vivait pas sous le même toit que son compagnon. «Comme il s’agissait d’infractions poursuivies sur plainte, j’avais trois mois, après chaque nouvelle agression, pour me retourner contre lui. Pour une infraction poursuivie d’office, le délai est de cinq ans.» Plus tard, Lorik se retrouvera en prison, mais pas pour le calvaire qu’il a fait subir à la jeune femme. Il sera condamné pour avoir poignardé un inconnu dans la rue.</p>
+	</div>
+</section>
+
+<!-- animated image chapter 2 -->
+<section class="gallery gallery-large animation">
+	<div class="image-container tribunal" id="animation-container-2">
+		<img class="center alpha" src="img/animations/2-tribunal/2-fond-et-balance.png" alt="">
+		<img class="left" src="img/animations/2-tribunal/4-personnages-gauche.png" alt="">
+		<img class="right" src="img/animations/2-tribunal/3-personnages-droite.png" alt="">
+		<img class="center" src="img/animations/2-tribunal/1-personnage-et-tribunal.png" alt="">
+
+
+
+	</div>
+</section>
+
+<!-- chapter 2 -->
+<section class="text-container padding-bottom">
+	<div class="container">
+		<h3 class="inter-titre title">Naissance d’un problème politique</h3>
+		<p>Depuis 2004, les actes de violence commis au sein du couple sont poursuivis d’office. Depuis 2007, la norme de protection contre la violence permet à la police et aux tribunaux civils d’ordonner à l’auteur de quitter le logement commun et de lui interdire de s’approcher de la victime. Des progrès immenses tant la Suisse revient de loin.</p>
+
+
+		<blockquote class="left">
+			<span>Celles qui se sont battues pour la protection des victimes ont été rejetées, considérées comme des femmes frustrées ou des lesbiennes</span>
+			<div class="caption"><b>Susan A. Peter</b>, directrice de la fondation zurichoise Frauenhaus</div>
+		</blockquote>
+
+		<p>«Les premières militantes qui ont souligné le grand tabou de la violence contre les femmes ont rencontré une très forte résistance à Zurich et à Genève, à la fin des années 1970, raconte Susan A. Peter, l’actuelle directrice de la fondation zurichoise Frauenhaus, active dans ce domaine depuis 1984. De nombreuses personnes, aussi du côté des autorités, déclaraient simplement qu’il n’y avait pas de violence contre les femmes en Suisse. Celles qui se sont battues pour la reconnaissance du problème et pour la protection des victimes ont été rejetées, considérées comme des femmes frustrées ou des lesbiennes.»</p>
+		<p>Sous la pression de la société civile et l’influence de nouveaux cadres internationaux, l’Etat met en place des politiques publiques consacrées au traitement des violences dans la sphère familiale et entame des réformes législatives dans les années 1990. Le viol entre époux est reconnu en 1992. Un an plus tard, en 1993, la loi sur l’aide aux victimes d’infractions (LAVI) entre en vigueur. Les cantons ouvrent des centres de consultation destinés à accompagner les victimes et à les conseiller en cas de procédure pénale. «La naissance de la LAVI n’est pas en lien direct avec la violence au sein du couple, rappelle néanmoins Muriel Golay, directrice du centre LAVI à Genève. Les exemples cités lors des débats faisaient référence à des situations où un agresseur inconnu surgit violemment de nuit dans le foyer, sans concevoir que le danger se situe souvent au sein même du ménage.» Or, en 2019, les violences familiales et conjugales ont représenté près de 45% des cas traités par le centre genevois.</p>
+		<p>A travers la lente prise de conscience qui s’opère, le cliché de l’homme violent, forcément pauvre, peu éduqué et macho vole en éclats. Loin de se cantonner aux populations vulnérables, précarisées ou migrantes, le fléau des violences conjugales imprègne toutes les couches de la société. On prend aussi conscience que la violence ne se résume pas aux coups et s’accompagne souvent de pressions psychologiques, sexuelles et d’inégalités économiques.</p>
+		<h3>Un fléau universel</h3>
+		<p>Marie, universitaire genevoise d’une quarantaine d’années, en sait quelque chose. «Je me suis souvent demandé quand l’engrenage a commencé», confie-t-elle pudiquement. Durant près de dix ans, elle a subi des violences psychologiques, sexuelles et économiques de la part de son mari, un homme «en apparence charmant, sensible, flatteur», avec qui elle a eu deux enfants. Avec le recul, il y a bien eu des signes avant-coureurs. Un «appétit sexuel démesuré», qui pousse son conjoint à lui déchirer sa culotte en pleine rue, à la réveiller plusieurs fois par nuit. Un «esprit manipulateur» qui exprime toujours le besoin de parler pour elle, de contrôler ses dépenses, ses relations, ses choix médicaux, jusqu’aux plats qu’elle commande au restaurant. Lorsqu’elle exprime des doutes, son compagnon lui répond souvent: «Si ça ne te plaît pas, c’est que tu es frigide et prude.»</p>
+
+		<blockquote class="right">
+			<span>Dans ma tête, la sexualité faisait partie du devoir d’une femme mariée, j’avais intégré cette soumission</span>
+			<!-- <div class="caption"><b>MARIE</b></div> -->
+		</blockquote>
+
+		<p>Longtemps, Marie reste «dans le brouillard», s’accroche à un rêve de famille parfaite. «Dans ma tête de bourgeoise bien éduquée, naïve, la violence conjugale, c’était un mari rustre qui battait sa femme lorsqu’il était ivre, confie-t-elle. Je n’arrivais pas à me considérer comme victime.» D’insultes en menaces, de conflits en réconciliations, la violence s’installe de manière insidieuse. Son quotidien devient peu à peu chaotique. «Où est la limite entre ce qui est acceptable et ce qui ne l'est pas?» s’interroge la jeune femme, qui se souvient avoir tenté de «se ressaisir», «d’ouvrir les yeux». En vain.</p>
+		<h3>Marie: «Plusieurs fois je l'ai repoussé»</h3>
+		<p>Sur le plan intime, elle subit une pression constante. «Il était du genre à prendre ce qu’il voulait sans me demander mon avis, je ne le faisais pas toujours avec envie, raconte-t-elle. Plusieurs fois, je l’ai repoussé mais cela ne l’a pas arrêté.» Un soir où elle ne peut retenir ses larmes pendant l’acte, son conjoint lui lance: «Arrête de pleurer, j’ai l’impression de te violer.» Sur le moment, ces mots ne la choquent pas. «Dans ma tête, la sexualité faisait partie du devoir d’une femme mariée, j’avais intégré cette soumission, confie Marie. Le viol conjugal, ça n’existait pas. S’il m’avait frappée, j’aurais réagi différemment. Il le savait et il jouait là-dessus.»</p>
+		<p>Isolée de sa famille avec qui elle a peu à peu coupé les ponts, démunie, Marie fait face à un mari absent, irascible, qui n’hésite pas à casser des objets pour manifester son désaccord. Toujours sur le qui-vive, elle tente de se faire oublier, de ne pas l’énerver. «Un soir de fureur, il a fracassé une porte et a menacé de s’en prendre à notre fils de 7 ans.» C’est le déclic. «A cet instant, j’ai compris qu’il était capable de tout, que j’étais en danger avec lui, confie Marie, je sens encore cette peur glaciale descendre dans mes tripes.» S’ensuit un parcours du combattant pour prendre un avocat, quitter la maison avec ses deux enfants, dont elle a aujourd’hui la garde partagée. «Il a tenté de me retenir, m’a dit que je n’étais rien sans lui, mais j’ai tenu bon.» En instance de divorce, Marie résume ces années en une phase: «Intérieurement, j’étais détruite, j’avais mal, mais je m’étais habituée à cette douleur. Un jour, elle est devenue insupportable.»</p>
+
+	</div>
+</section>
+
+
+<!-- animated image chapter 3 -->
+<section class="gallery gallery-large animation">
+	<div class="image-container" id="animation-container-3" style="padding-bottom: 53%;">
+		<img class="center"  src="img/animations/3-foyers/center.png" alt="">
+		<img class="left"  src="img/animations/3-foyers/left.png" alt="">
+		<img class="right"  src="img/animations/3-foyers/right.png" alt="">
+	</div>
+</section>
+
+<!-- chapter 3 -->
+<section class="text-container padding-bottom">
+	<div class="container">
+		<h3 class="inter-titre title">Les foyers comme réponse urgente</h2>
+		<p>Symbole ultime de quiétude, le domicile n’est pas toujours le lieu sûr que l’on imagine. Pour les victimes de violences conjugales, fuir est parfois une question de survie. L’ouverture du premier foyer de Suisse, en juillet 1979 à Zurich dans un bâtiment appartenant à la ville, marque donc un tournant. «L’information a circulé sans tarder auprès des hôpitaux et des cabinets médicaux et nous avons été immédiatement débordées. Comme nous n’avions pas de financement, l’encadrement a été réalisé bénévolement par des associations de femmes. Elles s’occupaient de 15 à 20 femmes et enfants en permanence, dans un appartement de quatre pièces», se souvient la juriste Jeanne DuBois, pionnière dans la lutte contre les violences conjugales. Populations marginalisées, migrantes, jeunes mères suisses confrontées à des violences extrêmes: dès le départ, le lieu accueille des victimes de tous les horizons.</p>
+		<p>Conçus pour répondre aux situations les plus urgentes, les foyers ne sont qu’un premier pas dans la résolution du problème. Aujourd’hui, la Suisse en compte 18, inégalement répartis sur le territoire. Plusieurs cantons dont Schaffhouse, le Jura et les deux Appenzell n’ont aucun lieu d’accueil. Les structures existantes, elles, manquent de moyens pour faire face à la demande.</p>
+		<p>Fatou, elle, a trouvé refuge au foyer genevois Arabelle pour échapper aux insultes, aux menaces, aux coups, aux pressions familiales aussi. C’était fin 2019. Seule du canton à accueillir des femmes avec enfants, la structure est ultra-sollicitée. «Nous recevons une demande tous les deux jours, confirme le directeur du lieu, Marc-Antoine La Torre. Actuellement, une centaine de femmes sont sur liste d’attente. On doit évaluer l’urgence des situations, tout en sachant que certaines menacent d’exploser.»</p>
+		<p>Originaire d’Afrique de l’Ouest, Fatou a dû épouser son cousin. «Mon mari, je ne l’ai pas choisi, c’est ma famille qui l’a fait pour moi, raconte la jeune trentenaire. Il habitait déjà en Suisse, on a commencé à discuter sur les réseaux sociaux. Au téléphone, il était doux, ouvert, petit à petit on s’est acceptés.» Dans sa tête, ce «frère» ne peut que la protéger. A son arrivée, Fatou tombe très rapidement enceinte. Affaiblie, la jeune femme s’acquitte des tâches ménagères tandis que son mari se mure dans le silence: «Il me laissait seule à la maison, refusait de manger ce que je lui préparais, me repoussait, me rabaissait continuellement.» Lors des disputes, il lui lance: «Si c’est la grossesse qui te retient de partir, tu peux avorter et rentrer.»</p>
+
+		<h3>Fatou: «De victime, j’allais devenir coupable»</h3>
+		<p>Fatou tombe de haut, panique dans cette ville où elle ne connaît personne. «Je m’enfermais dans les toilettes pour pleurer, raconte-t-elle. Je ne voulais pas inquiéter ma mère, je devais gérer mes problèmes moi-même.» Elle sait qu’en cas de conflits, sa communauté, au pays, verra d’un mauvais œil une séparation. Elle tente de chercher du soutien auprès de la sœur de son mari, mais celle-ci l’accuse d’être une mauvaise épouse. Les insultes quotidiennes redoublent. Entre-temps, elle accouche de son second enfant. Son nouveau-né dans les bras, Fatou trime à la maison. Impossible d’ouvrir un compte en banque, de sortir librement ou encore d'entamer une formation d’aide-soignante, comme elle en a toujours rêvé. Son mari contrôle ses faits et gestes. A bout, elle met son oncle dans la confidence, mais ce dernier minimise les faits. «C’était pendant le ramadan, souligne-t-elle. Dans notre pays, la femme est soumise, doit tout accepter. Si elle se plaint, on ne la croit en général pas.»</p>
+		<p>Au cœur de l’hiver, la violence physique vient aggraver son calvaire. Lors d’une nouvelle dispute qui survient dans le parking au moment de se rendre à un enterrement, son mari veut prendre le volant en la laissant seule avec ses deux enfants. Fatou tente de l’en empêcher. «Il m’a menacée en hurlant et a serré mon cou si fort que je n’arrivais plus à respirer.» Jetée à terre, rouée de coups, la jeune femme perd connaissance et se réveille dans son salon avec une douleur atroce à la nuque. «Je ne savais pas comment j’étais arrivée là, raconte-t-elle. Désemparée, j’ai appelé l’ambulance.» Mais après la douleur vient la peur. «De victime, je savais que j’allais devenir coupable, que la communauté allait s’acharner sur moi.»</p>
+
+		<blockquote class="left">
+			<span>En venant en Suisse, je ne pensais pas qu’il gâcherait ma vie. Mon erreur a été de lui faire confiance</span>
+			<!-- <div class="caption"><b>OLIVIER WÜTHRICH</b>, mécanicien à La Chaux-de-Fonds</div> -->
+		</blockquote>
+
+
+		<p>La police arrive avec les ambulanciers qui l’emmènent faire un constat médical. Malgré les traces sur son cou, Fatou renonce à porter plainte. «C’était la première fois, souffle-t-elle, il reste le père de mes enfants.» Dans sa tête résonne une menace, celle de voir sa famille humiliée, ses enfants maudits. Dans son pays, une femme qui dénonce son mari le paye très cher. Après l’altercation, plusieurs proches lui conseillent même de lui demander pardon. Les jours qui suivent, la jeune femme, terrorisée, appelle encore son oncle à l’aide. Il finit par la croire et alerte une association. Un soir que son mari s’est absenté, Fatou quitte enfin la maison avec ses enfants. Aujourd’hui, elle vit avec eux au foyer. Le Ministère public a porté plainte d’office et la séparation d'avec son compagnon est en cours. «En venant en Suisse, je ne pensais pas qu’il gâcherait ma vie, souffle-t-elle. Mon erreur a été de lui faire confiance.»</p>
+
+	</div>
+</section>
+
+<section class="gallery gallery-large animation">
+	<div class="image-container" id="animation-container-4" style="padding-bottom: 67%">
+		<img class="enfants" src="img/animations/4-tabou/2-fond.png" alt="">
+		<img class="persos" src="img/animations/4-tabou/1-personnages.png" alt="">
+		<img class="" src="img/animations/4-tabou/3-sang-1.png" alt="">
+		<img class="" src="img/animations/4-tabou/4-sang-2.png" alt="">
+
+
+
+
+	</div>
+</section>
+
+<!-- chapter 4 -->
+<section class="text-container padding-bottom">
+	<div class="container">
+		<h3 class="inter-titre title">La souffrance niée des hommes battus</h2>
+		<p>Du privé au politique, l’institutionnalisation de la lutte contre les violences conjugales ne s’est pas faite sans tensions, comme le souligne un récent ouvrage**, qui en retrace l’historique<em>. </em>Dans les années 1990 et 2000, à mesure que l’aide aux victimes se professionnalise et que les politiques publiques se mettent en place, la question des inégalités entre hommes et femmes s’efface. Impliquer de nouveaux acteurs dans la lutte contre les violences – police, justice, médecins et psychiatres – conduit à «lisser le discours», soulignent les autrices. Au même moment, la définition de la violence devient un champ de bataille: on ne parle plus de «violences faites aux femmes», ni de «violences masculines», mais de «violences domestiques», un terme plus consensuel qui englobe les femmes, les hommes et les enfants. Les approches et les grilles d’analyse se multiplient: on s’occupe davantage des auteurs, on met en avant les facteurs psychologiques et individuels de la violence. Le sexisme n’est plus l’explication centrale, mais un facteur parmi d’autres.</p>
+		<p>Dans le même temps, un ultime tabou demeure: celui de l’homme battu. La société considère encore les hommes comme des bourreaux et les femmes comme des victimes, ce qui est vrai dans la grande majorité des cas. Mais selon les données de l’OFS, qui se fonde sur la statistique policière de la criminalité, il y a tout de même 20% «d’hommes lésés par une femme prévenue». Le problème est donc loin d’être marginal.</p>
+
+		<blockquote class="right">
+			<span>Les hommes pensent qu’ils doivent être capables de résoudre leur problème tout seuls, sinon ils se considèrent comme des losers</span>
+			<div class="caption"><b>Sieglinde Kliemen</b>, directrice d’un refuge pour hommes à Berne</div>
+		</blockquote>
+
+		<p>Car les hommes – comme beaucoup de femmes, il est vrai – se taisent, préférant souffrir sans porter plainte. Sieglinde Kliemen, qui s’occupe d’un refuge pour hommes à Berne, peut en témoigner. «Les hommes pensent qu’ils doivent être capables de résoudre leur problème tout seuls, sinon ils se considèrent comme des losers. Et puis, ils ont honte car ils sont sûrs de ne pas être crus», relate-t-elle. En tant que gérante de ce foyer, celle-ci est presque toujours la première à leur parler. «A la triviale question de savoir comment ils vont, 90% des hommes commencent par fondre en larmes.» Qu’ils soient travailleurs, médecins, cadres ou chefs d’entreprise.</p>
+		<h3>Daniel: «Les insultes, c’est la magnitude 1 sur l’échelle de Richter»</h3>
+		<p>Daniel, chef d’une PME à la stature de basketteur, a vécu cet enfer. Avec sa femme, épousée en 2009, ils vivent une relation stable avant que la situation ne se détériore après l’arrivée des enfants. Cela commence par des violences psychologiques, mais Daniel ne s’inquiète pas trop. «Les insultes, c’est la magnitude 1 sur l’échelle de Richter de la violence domestique», raconte-t-il. Il y a pire: le dénigrement de son mari auprès de son employeur, «la magnitude 5». Et même nettement pire: la «magnitude 8», c’est la menace – sans la moindre preuve – d’une plainte pour attouchements sur les enfants.</p>
+		<p>Durant trois ans, Daniel souffre en silence. Il se plonge dans la littérature spécialisée sur la gestion non violente des conflits et propose une thérapie de couple à sa femme, ce qu’elle refuse. Il finit par s’adresser à l’Unité interdisciplinaire de médecine et de prévention de la violence (UIMPV) à Genève. «J’ai pu verbaliser ma souffrance et prendre un peu de distance.» En l’apprenant, sa femme «volcanique» enrage et passe à la violence physique: déchirure d’habits, menaces au couteau, gifles, coups de poing. Jusqu’au jour où elle tente de l’étrangler en présence des enfants.</p>
+		<p>Sur la base des nombreux certificats médicaux qu’il produit, la justice prend des mesures superprovisionnelles en juin 2016, en lui attribuant aussi bien le domicile conjugal que la garde des enfants. Mais sa femme refuse de quitter l’appartement. Lorsqu’il cherche l’aide de la police, celle-ci, très embarrassée, préfère renoncer à intervenir: «Il vous faut expulser votre femme tout seul», conseille-t-elle. Malgré le jugement en sa faveur, c’est lui qui doit trouver refuge dans un foyer d’accueil durant trois semaines, dont le coût sera tout de même assumé par le centre LAVI genevois.</p>
+		<p>L’homme victime? La société n’est pas prête à accepter cette réalité, ses institutions non plus. Daniel en est franchement écœuré. Il montre plusieurs brochures datant des années 2010-2015, qui ne s’adressent qu’aux femmes, même lorsqu’elles ont déjà adopté l’écriture inclusive! Lorsqu’il s’adresse à une ligne d’urgence «stop à la violence», il s’entend répondre: «Bonjour madame.»</p>
+		<p>Sieglinde Kliemen confirme ces propos: «En cas de dispute conjugale, la police intervient et évacue toujours l’homme, même si la femme est le bourreau», affirme-t-elle. En novembre 2018, elle assiste à une conférence nationale consacrée à la mise en œuvre de la Convention d’Istanbul sur la violence conjugale, à laquelle assistent près de 400 personnes. «Durant toute la journée, on n’a mentionné que trois fois le fait que les hommes puissent aussi être des victimes», se désole-t-elle.</p>
+		<p>A Genève, le psychologue et thérapeute de couple Serge Guinot a fondé en 2008 l’association Pharos pour venir en aide aux hommes victimes de violence en couple, constatant le manque d’offre en la matière. «La violence n’a pas de sexe, elle est humaine, relève-t-il. La violence masculine est associée à la sexualité et au pouvoir par la force, tandis que la violence féminine est associée à la parentalité et au pouvoir par l’émotionnel.» Aujourd’hui, la parole de l’homme commence à émerger, mais elle n’est pas forcément écoutée. «Ce qui manque, c’est l’inclusion de cette problématique par les différentes instances confrontées à la violence domestique», déplore-t-il.</p>
+		<p>Parmi ces instances, il y a le Bureau fédéral de l’égalité entre femmes et hommes (BFEG), qui devrait être exemplaire à cet égard mais qui ne l’est pas toujours. Le 23 mars dernier, il se préparait à publier un communiqué dans lequel il ne parlait que des auteurs – au masculin uniquement – de violence domestique, et ne citait pas les refuges destinés aux hommes. Il a fallu l’intervention de la Coordination romande des organisations paternelles (CROP) pour qu’il corrige le tir. Contacté, le BFEG admet une erreur dans la version française du communiqué, mais conteste le reproche fait à son encontre. «La Convention d’Istanbul, entrée en vigueur en 2018 pour la Suisse, traite aussi de la protection des hommes victimes de violence domestique et les centres cantonaux d’aide aux victimes accueillent toute personne quel que soit son sexe», tient-il à préciser.</p>
+		<p>Cela ne rassure que moyennement les professionnels de ce combat, lesquels doutent que les chiffres officiels fournis soient représentatifs de la réalité dans la mesure où ils ne reportent que les cas connus de la police. «Les hommes sont beaucoup plus réticents que les femmes à déposer plainte, de sorte que le taux de 20% est probablement beaucoup plus élevé», estime le porte-parole du CROP, Patrick Robinson. Ce dernier cite plusieurs études, dont celle du professeur Guy Bodenmann, effectuée de manière anonyme auprès de 1200 femmes et 700 hommes en 2004, concluant qu’il n’y a «pas de différence significative entre les violences subies par les femmes et les hommes». Mais pour s’approcher de la vérité sur ce plan, il faudra que les hommes sortent de leur silence.</p>
+
+	</div>
+</section>
+
+<!-- animated image chapter 5 -->
+<section class="gallery gallery-large animation">
+	<div class="image-container" id="animation-container-5" style="padding-bottom: 67%">
+			<img class="left" src="img/animations/5-therapie/5-therapie-3.png" alt="">
+			<img class="right" src="img/animations/5-therapie/5-therapie-2.png" alt="">
+			<img class="center" src="img/animations/5-therapie/5-therapie-1.png" alt="">
+	</div>
+</section>
+
+<section class="text-container padding-bottom">
+	<div class="container">
+		<h3 class="inter-titre title">Prendre en charge les auteurs ou autrices</h2>
+		<p>Près de trente ans après les premières reconnaissances juridiques, quel bilan tirer de la lutte contre les violences au sein du couple? «Aujourd’hui, nous n’avons plus besoin de prouver que la violence domestique existe», résume la juriste Jeanne DuBois. De grands progrès ont, selon elle, été réalisés dans la prise en charge des victimes, du moins dans le canton de Zurich, où la police intervient en moyenne 13 fois par jour pour des violences domestiques. Souvent les premiers sur les lieux lorsqu’un conflit éclate, les agents sont formés à l’interrogatoire des victimes. «C’est sans comparaison avec le passé, lorsque le policier de quartier intervenait sans avoir été formé sur les séquelles causées par la violence. Une victime peut tenir des propos contradictoires, minimiser la situation, ou avoir des trous de mémoire. Ce qui peut être interprété comme une faiblesse du témoignage est souvent le signe d’un traumatisme.»</p>
+		<p>Anita, Marie, Fatou et Daniel: les victimes ont toutes attendu plusieurs années et une détérioration extrême de leurs relations de couple pour se plaindre. Elles ne sont pas une exception: la voie juridique demeure un long chemin de croix à l'issue incertaine. Une étude menée en 2019 à Zurich a permis de montrer qu’une large majorité (64,6%) des affaires liées à la violence domestique sont classées sans suite. Dans la moitié des cas, les victimes décident de retirer leur plainte, ou renoncent à témoigner. Souvent, elles retournent vivre avec leur bourreau. Mal interprétée par l’entourage ou par les autorités, cette attitude est pourtant bien connue des professionnels. «Les victimes ne veulent pas punir leur agresseur. Ce qu’elles souhaitent avant tout, c’est que les violences s’arrêtent et que le comportement de leur agresseur change», souligne l’assistante sociale Pia Allemann. Qui précise: «Il faut en moyenne cinq à sept tentatives de rupture avant d’arriver à une séparation définitive.»</p>
+		<p>L’écueil juridique demeure aussi un frein à Genève. «La violence conjugale s’exerce souvent sans témoins, c’est la parole de l’un contre celle de l’autre, poursuit Muriel Golay. Dans bien des cas, la justice n’entre pas en matière. Un message dévastateur pour la victime.» De même, le recours aux mesures de protection des victimes pourrait certainement être augmenté. En 2019, la police genevoise a mené 700 interventions et prononcé 60 mesures d’éloignement allant de 10 jours à 3 mois. «Le dispositif est donc encore très peu appliqué, alors même que le taux de récidive des auteurs qui ont été éloignés est très bas», regrette Muriel Golay.</p>
+		<h3>Thérapies obligatoires</h3>
+		<p>Plutôt que de se contenter d’éloigner la victime de son domicile pour la protéger, ne faudrait-il pas mieux prendre en charge les auteurs, homme ou femme, pour éviter la récidive? Marie aurait souhaité que son agresseur soit amené à questionner son comportement, Fatou aussi. Si la plupart des cantons sont désormais dotés de lois permettant d’éloigner un agresseur de son domicile, ainsi que de structures d’encadrement spécialisées, rien n’obligeait jusqu’ici un homme violent à se soigner. Cela vient de changer avec l’entrée en vigueur de la loi fédérale sur l’amélioration de la protection des victimes de violence le 1er juillet 2020. Celle-ci prévoit la possibilité pour les tribunaux d’ordonner à un prévenu de suivre un programme de prévention de la violence, même avant la fin d’une procédure. Le recours au bracelet électronique pour faire respecter les interdictions géographiques sera, quant à lui, introduit en 2022.</p>
+		<p>Destiné à faire réfléchir les auteurs, homme ou femme, aux raisons qui les ont poussés à user de violence envers leur partenaire, un tel programme existe depuis 2000 à Zurich. En 2019, 50 individus l’ont suivi, soit deux fois plus que la moyenne habituelle. Alors que, jusqu’ici, les autorités semblaient plutôt ignorer cette mesure, très rarement prescrite par les procureurs, faut-il y voir le signe d’un changement d’approche? Une chose est sûre, les cantons devront à l’avenir examiner leurs politiques de prise en charge des auteurs de violences. En effet, la Convention d’Istanbul exige des Etats signataires qu’ils élaborent des programmes destinés à «prévenir de nouvelles violences et changer les schémas comportementaux».</p>
+		<p>Au sein des milieux concernés, la mesure suscite l’espoir de voir, un jour, fléchir en Suisse la courbe des délits domestiques et leur lot de séquelles, parfois indélébiles. Dans la rue aussi, les attentes sont grandissantes. Depuis 2016 et l’émergence du mouvement <em>#MeToo</em>, les marches contre les violences ou encore la grève des femmes du 14 juin 2019, un élément central revient au centre du débat: les violences prennent racine dans les rapports inégaux entre hommes et femmes qui façonnent le couple. De plus en plus repris dans les manifestations, un terme apparu récemment reflète cette approche militante qui renoue avec les fondamentaux féministes de 1970: celui de «féminicide», soit le fait qu’un homme tue une femme pour le seul fait de son genre.</p>
+
+		<div class="spacer-small"></div>
+		<div class="spacer-small"></div>
+
+
+		<hr />
+		<div class="spacer-small"></div>
+
+		<p>*Prénom d’emprunt<br>
+		** «Contrer les violences dans le couple, émergence et reconfigurations d’un problème public», Pauline Delage, Marylène Lieber, Marta Roca i Escoda, 2020.</p>
+
+		<div class="spacer-small"></div>
+		<div class="spacer-small"></div>
+	</div>
+</section>
+<section class="encart padding-bottom odd">
+
+			<!-- <div class="spacer-small"></div>
+			<div class="spacer-small"></div> -->
+			<div class="spacer-small"></div>
+			<div class="spacer-small"></div>
+			<div class="container">
+
+				<h3 class="inter-titre title">
+					<b>Pourquoi avoir choisi de parler de la violence conjugale en particulier?</b>
+				</h3>
+
+				<p>Longtemps cantonnée à la sphère privée, la violence conjugale est aujourd’hui un enjeu politique et social omniprésent dans l’espace public. Nous avons fait le choix de nous concentrer sur les violences au sein du couple en excluant les autres délits commis dans le cadre familial (des parents envers les enfants, des adolescents envers les parents ou personnes âgées, entre frères et sœurs, etc.) Notre but était de nous pencher sur cette prise de conscience d’un phénomène dans lequel les inégalités entre les sexes jouent un rôle clé. Pour illustrer les mécanismes de la violence, les rapports de dépendance économique ou encore le poids des pressions familiales, nous avons choisi de nous focaliser sur les relations entre partenaires, mariés ou non.</p>
+
+				<p style="font-size: inherit;">
+					 <b>Comment recueillir la parole des victimes?</b><br>
+					Les centres d’aide aux victimes ainsi que les associations nous ont permis d’entrer en contact avec des femmes et des hommes qui avaient vécu des violences physiques, psychologiques ou économiques dans leur relation de couple. Rares et précieux, ces témoignages ont nécessité une mise en confiance totale et une grande prudence, les victimes étant parfois encore dans l’attente d’une décision de justice ou simplement terrorisées à l’idée d’être reconnues. Pour préserver l’anonymat des témoins, nous avons illustré cette enquête par des dessins qui amènent une part de créativité au propos, à défaut de portraits photographiques. Ainsi, l’iconographe responsable du dossier a confié le soin de réaliser les images à l’illustrateur et artiste genevois <a href="https://www.instagram.com/kalonjijp">Kalonji</a>. Ensemble, ils ont défini un fil rouge visuel, sur la base de nombreux échanges autour de ce thème particulièrement sensible qu’ils voulaient traiter dans le respect des victimes.<br>
+					<b>Lire aussi:</b> <a target="_blank" href="https://www.letemps.ch/culture/lactualite-matiere-modeler-illustrateurs">L’actualité, matière à modeler pour les illustrateurs</a>
+				</p>
+
+				<p>
+					<b>Comment parler des hommes violentés?</b>
+					<br>Nous n’avons pas réussi à briser le tabou des hommes battus physiquement: aucun n’a souhaité prendre la parole publiquement. C’est simple: plusieurs d’entre eux, même lorsqu’ils interviennent parfois dans des débats publics à divers titres, refusent de parler à visage découvert. L’un d’entre eux a confié qu’il craignait de perdre toute crédibilité sur le plan politique s’il avouait avoir été frappé. Tous – sans exception – se plaignent que leur souffrance ne soit toujours pas prise suffisamment au sérieux par la société, y compris par les bureaux de l’égalité cantonaux et fédéraux. Tous sont aussi persuadés qu’ils sont plus nombreux que les statistiques ne le disent.
+				</p>
+
+				<p>
+					<b>Quelles difficultés avons-nous rencontrées au cours de l’enquête?</b>
+					<br>Notre ambition de départ était de suivre la trajectoire de la violence depuis sa naissance au sein du foyer. Nous voulions comprendre comment l’engrenage se met en place pour durer parfois des années et, un jour, se briser. Cela supposait aussi de suivre le parcours d’une plainte, du poste de police au tribunal, pour documenter la quête, souvent longue et incertaine, de justice. Compte tenu de l’histoire des personnes que nous avons choisi de suivre, cette dernière étape n’a pas pu être réalisée. Les plaintes, si elles ont été déposées, sont pour la plupart en cours d’instruction. Devoir évoquer cette épreuve judiciaire cruciale par des statistiques plutôt que des témoignages individuels reste un regret.
+				</p>
+
+				<p>
+					<b>Que faut-il retenir?</b>
+					Malgré les progrès évidents de ces dernières décennies, de nombreux tabous subsistent autour des violences au sein du couple. La plupart des victimes, hommes ou femmes, renoncent encore à porter plainte et encaissent la violence durant de longues années avant de la dénoncer: c’est ce qui ressort de notre enquête, qui a duré plusieurs mois. S’ils permettent de retracer l’origine d’une prise de conscience, les témoignages recueillis illustrent aussi l’ampleur du chemin à parcourir pour que les victimes soient mieux écoutées, mieux prises en charge et mieux défendues.
+				</p>
+
+			</div>
+		</section>
+
+{{ block('contrib_bloc') }}
+<style>
+.contribution .container
+{
+	padding-top: 30px;
+}
+</style>
+
+
+<footer>
+	<!-- <hr class="end"> -->
+	<div class="container">
+
+		<h5>Nos grands formats</h5>
+
+		<div class="row">
+			<a href="https://labs.letemps.ch/interactive/2019/longread-secret-bancaire/" target="blank" class="footer__link">
+				<div class="teaser">
+					<div class="teaser-bg" style="background: url('img/thumb-secret-bancaire.jpg');"></div>
+					<div class="caption">Dix ans sans secret bancaire</div>
+				</div>
+			</a>
+			<a href="https://www.letemps.ch/grand-format/bienvenue-beattyville" target="blank" class="footer__link">
+				<div class="teaser">
+					<div class="teaser-bg" style="background: url('img/thumb-beattyville.jpg');"></div>
+					<div class="caption">Bienvenue à Beattyville</div>
+				</div>
+			</a>
+		</div>
+
+		<div class="row">
+			<a href="https://labs.letemps.ch/interactive/2018/longread-homo-plasticus/" target="blank" class="footer__link">
+				<div class="teaser">
+					<div class="teaser-bg" style="background: url('img/thumb-plasticus.jpg');"></div>
+					<div class="caption">Homo plasticus</div>
+				</div>
+			</a>
+
+			<a href="https://labs.letemps.ch/interactive/2018/longread-pesticides/" target="blank" class="footer__link">
+				<div class="teaser">
+					<div class="teaser-bg" style="background: url('img/thumb-pesticides.jpg');"></div>
+					<div class="caption">Dans les champs romands, la bataille des pesticides</div>
+				</div>
+			</a>
+		</div>
+
+		<div class="row">
+			<a href="https://labs.letemps.ch/interactive/2018/longread-pinchat/" target="blank" class="footer__link">
+				<div class="teaser">
+					<div class="teaser-bg" style="background: url('img/thumb-pinchat.jpg');"></div>
+					<div class="caption">Face aux classes infernales, les profs romands vivent un cauchemar</div>
+				</div>
+			</a>
+
+			<a href="https://www.letemps.ch/grand-format/urgentistes-crime-geneve-justice-police" target="blank" class="footer__link">
+				<div class="teaser">
+					<div class="teaser-bg" style="background: url('img/thumb-urgentistes.jpg');"></div>
+					<div class="caption">Urgentistes du crime </div>
+				</div>
+			</a>
+		</div>
+
+		<div class="row">
+			<a href="https://labs.letemps.ch/interactive/2016/longread-gothard/" target="blank" class="footer__link">
+				<div class="teaser">
+					<div class="teaser-bg" style="background: url('img/thumb_gothard.jpg');"></div>
+					<div class="caption">Les oubliés du Gothard</div>
+				</div>
+			</a>
+
+			<a href="https://labs.letemps.ch/interactive/2016/longread-fioul-lourd/" target="blank" class="footer__link">
+				<div class="teaser">
+					<div class="teaser-bg" style="background: url('img/thumb_fioul.jpg');"></div>
+					<div class="caption">Fioul lourd, le sang impur de la globalisation</div>
+				</div>
+			</a>
+		</div>
+
+	</div>
+
+	<div class="credits">
+		<div>Texte: Michel Guillaume, Sylvia Revello et Céline Zünd<br>
+			Iconographie: Mariella Solazzo<br>
+			Illustrations: Kalonji pour <i>Le Temps</i><br>
+			Réalisation Web: Paul Ronga<br>
+			Webdesign: César Greppin<br>
+		</div>
+	</div>
+</footer>
+
+{{ block('footer_brand') }}
+<script src="js/jquery-1.12.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenMax.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.js"></script>
+<script src="js/jquery.lazyload.js?v=1.9.7"></script>
+<script src="js/intro-control.js?12"></script>
+<script src="js/viewport.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/d3/4.7.2/d3.min.js"></script>
+
+<script src="js/main.js?12"></script>
+<script src="js/zoom.js"></script>
+
+</body>
+</html>
